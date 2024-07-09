@@ -1,0 +1,166 @@
+:root{
+    --dark_blue:#0A3871;
+    --ligth_blue:#D8DFE8;
+    --containerColor: #F3F5FC;
+    --font:"Inter", sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: var(--containerColor);
+    font-family: var(--font);
+    
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+header{
+    margin-bottom: 4rem;
+    width:60%;
+}
+
+header img{
+    width: 120px;
+    height: 48px;  
+}
+
+.form_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85vh;
+}
+
+.form_text{
+    width: 100%;
+    max-width: 577px;
+    height: 60vh;
+    overflow: auto;
+    border-color: transparent;
+    background: transparent;
+    outline: none;
+    color: var(--dark_blue);
+    font-family: var(--font);
+    font-size: 3.2rem;
+    margin-bottom: 3rem;
+    
+}
+
+::placeholder{
+    color: var(--dark_blue);
+}
+
+.alerta {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.alerta img {
+    margin-right: 1rem;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.btnEncriptar {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    width: 328px;
+    height: 50px;
+    background-color: var(--dark_blue);
+    color: white;
+    border: 1px solid var(--dark_blue);
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.btnDesencriptar{
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    width: 328px;
+    height: 50px;
+    background-color: var(--ligth_blue);
+    color: var(--dark_blue);
+    border: 1px solid var(--dark_blue);
+    border-radius: 24px;
+    cursor: pointer;
+}
+.hidden{
+    display: none;
+}
+
+.mensajeEncriptado{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:5rem ;
+    height: 65vh;
+    max-width: 40rem;
+    width: 100%;
+    border-radius: 32px;
+}
+
+.imagenMensaje{
+    display: block;
+}
+
+.container_mensajes {
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .container{
+        flex-direction: column;
+    }
+    .mensajeEncriptado{
+        height: auto;
+        max-width: 624px;
+        margin-top: 2rem;
+        min-height: 186px;
+    }
+    .imagenMensaje{
+        display: none;
+    }
+
+    .button-container {
+        justify-content: center;
+    }
+
+    header img{
+        width: 73px;
+    }
+
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 50px;
+    --b: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #514b82;
+    -webkit-mask: 
+    repeating-conic-gradient(#0000 0deg,#000 1deg 70deg,#0000 71deg 90deg),
+    radial-gradient(farthest-side,#0000 calc(100% - var(--b) - 1px),#000 calc(100% - var(--b)));
+    -webkit-mask-composite: destination-in;
+            mask-composite: intersect;
+    animation: l5 1s infinite;
+}
+@keyframes l5 {to{transform: rotate(.5turn)}}
